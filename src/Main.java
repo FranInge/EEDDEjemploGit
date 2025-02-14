@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -126,8 +127,20 @@ public class Main {
         bo= cad1.equals("23"); //cad1=23
         System.out.println("bo: " + bo);//bo:23=23 --> true
 
+        // Arrays
+        int []arrInt1= new int[5];
+        int []arrInt2= {0, 1, 2, 3, 4};
 
+        System.out.println("arrInt1: " + Arrays.toString(arrInt1)); //arrInt1= {0, 0, 0, 0, 0}
+        System.out.println("arrInt2: " + Arrays.toString(arrInt2)); //arrInt2= {0, 1, 2, 3, 4}
 
+        //Matrices
+
+        int[][]matriz1= new int[5][5];
+        int[][]matriz2= {{0, 1, 2, 3, 4},
+                         {0, 1, 2, 3, 4} }; //Abajo se pone asi porque no sabe sacar unicamente las dos primeras, sacatodolo guardado
+        System.out.println("matriz1: " + Arrays.toString(matriz1[0]) + "\n" + Arrays.toString(matriz1[1])); //matriz1=[0,0,0,0,0], [0,0,0,0,0]
+        System.out.println("matriz2: " + Arrays.toString(matriz2[0]) + "\n" + Arrays.toString(matriz2[1])); //matriz1=[0,1,2,3,4], [0,1,2,3,4]
 
         System.exit(0); //Termina con la ejecucion del programa --> return 0, se puede usar para que el programa lea una sola parte el proyecto
     }
