@@ -79,7 +79,57 @@ public class Main {
             cont = vp%2;
             c++;
         }
-
         System.out.println("El numero ingresado es par. Numero de intentos hechos: " + c);
+
+        //Conversion de tipos de datos
+        vi=(int)2.9 + (int)1.1;
+        System.out.println("vi: " + vi );
+        vi = (int)(2.9 + 1.1);
+        System.out.println("vi: " + vi );
+        //vi = (int)vb + vb; hay tipos que no son convertibles
+        vi = vc + 1;
+        System.out.println("vi (entero): " + vi + " vi (char): " + (char)vi);
+
+        //5 - Operadores
+
+        int a=1, b=2;
+        System.out.println("a: " + a + " b: " + b);
+        a++; //Postincremento
+        ++b; //Preincremento
+        System.out.println("a: " + a + " b: " + b);
+        int C = a++ * ++b; //En este caso primero agarra el a como 2 y despues le incrementa, al b lo incrementa primero y despues lo usa
+        System.out.println("a: " + a + " b: " + b + " C: " + C);
+
+        //Precedencia de operadores: () ++ -- */% +- < <= == >= > !=
+        boolean bo= (2+8) < ++a || 2+5*9 == a++ + 43; //10 < 4 || 47 == 47;// (El ultimo a dice que es 4, pero despues a=5 asi que si se repite, a es distinto)
+                                                      //false || true --> true
+        System.out.println("bo: " + bo + "a: " + a); //a vale 5
+
+        bo = ++a < 10  || ++a == 6 && true; //primer a vale 6 ultimo a vale 7, pero como la primera parte ya es true, todolo otro no se hace
+            //true ||...... --> true (por el or).
+        // Esto es por el doble ||, si es solo 1 | se evaluan los dos lados si o si
+        System.out.println("bo: " + bo + "a: " + a);
+
+        //Strings
+        cad = "Hola"; //Sobrecarga de operadores: El operador se comporta de forma diferente segun sus operadores
+        a= 1+1;
+        cad = "1" + "1" + 2 + 3 + 4 + 2.3 + true;//+ es concatenacion, incluir otro tipo se denomina wrapping
+        System.out.println("cad: " + cad); //cad es la cadena 1111, se agregan los numero al costado
+                                            //"1"+"1" + 2+3+4+2.3+true=112342.3true
+        //Subcadenas
+        String cad1= cad.substring(2,4); //Agarra del 2 al anterior -1
+        System.out.println("cad1: " + cad1); //Escribe cad1=23
+
+        bo= "hola".equals("Hola"); //Como las cadenos no son iguales hola!=Hola, es false
+        System.out.println("bo: " + bo); //bo=false
+
+        bo= cad1.equals("23"); //cad1=23
+        System.out.println("bo: " + bo);//bo:23=23 --> true
+
+
+
+
+        System.exit(0); //Termina con la ejecucion del programa --> return 0, se puede usar para que el programa lea una sola parte el proyecto
     }
+
 }
