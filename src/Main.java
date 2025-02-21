@@ -1,5 +1,7 @@
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.printf("Hola\n");
@@ -142,7 +144,46 @@ public class Main {
         System.out.println("matriz1: " + Arrays.toString(matriz1[0]) + "\n" + Arrays.toString(matriz1[1])); //matriz1=[0,0,0,0,0], [0,0,0,0,0]
         System.out.println("matriz2: " + Arrays.toString(matriz2[0]) + "\n" + Arrays.toString(matriz2[1])); //matriz1=[0,1,2,3,4], [0,1,2,3,4]
 
+        //
+
+        enum Calificaciones  {SUS, APR, NOT, SB};
+
+        Calificaciones nota0, nota1;
+        double nota2, nota3;
+        nota2=5.0;
+        nota0= Calificaciones.APR;
+        nota1= Calificaciones.SB;
+
+        Calificaciones []notas1= new Calificaciones[10]; //Array de 10 elementos(0 a 9)
+        for(int i=0; i<notas1.length; i++){ //array.length
+            notas1[i]= Calificaciones.APR;
+        }
+
+        //Definir un array de 10 notas y asignar todas el valor SB
+        Calificaciones []notas2= new Calificaciones[10];
+        for(int i=0; i<notas2.length; i++){
+            notas2[i]= Calificaciones.SB;
+        }
+        //Otra forma de hacerlo
+        Calificaciones []notasn= new Calificaciones[10];
+        for(Calificaciones cal: notasn){ //Otra forma de recorrer un array, el tipo de elementos del array, el nombre de una variable y el array
+            cal= Calificaciones.SB;
+        }
+
+        //Escribir un bucle for abreviado que sume los elementos de un array de enteros de nombre ai, 5 posiciones inizializando previamente dando a cada posicion del valor 10, mostrar el array con Arrays.toString()
+
+        int[] ai = {10, 10, 10, 10, 10};
+
+        int suma=0;
+        for(int num: ai){
+            suma+=num;
+        }
+        System.out.println("Ai: " + Arrays.toString(ai) + "suma: " + suma);
+
+
         System.exit(0); //Termina con la ejecucion del programa --> return 0, se puede usar para que el programa lea una sola parte el proyecto
+
+
     }
 
 }
